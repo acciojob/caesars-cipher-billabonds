@@ -37,10 +37,10 @@ function rot13(encodedStr) {
 
 	for(let i=0;i<encodedStr.length;i++)
 	{// ABC% -> NOP%
-		if(lookup.hasOwnProperty(encodedStr[i]))
-			decodedArr.push(lookup.encodedStr[i]);
+		if(lookup[encodedStr[i]] == undefined)
+			decodedArr.push( encodedStr[i] );
 		else 
-			decodedArr.push(encodedStr[i]);
+			decodedArr.push( lookup[encodedStr[i]] );
 	}
 
   return decodedArr.join(""); 
